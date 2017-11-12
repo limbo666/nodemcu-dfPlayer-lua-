@@ -1,4 +1,4 @@
-Alt-H1 dfPlayer mini control by lua 
+dfPlayer mini control by lua 
 ===================================
 Control dfPlayer mini devices from nodemcu based devices using their serial communication protocol.
 dfPlayer mini is a low cost mp3 player whcih can be used in many appliactions. *More info about the hardware can be found on https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299 *
