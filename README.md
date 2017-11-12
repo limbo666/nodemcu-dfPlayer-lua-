@@ -2,12 +2,11 @@ dfPlayer mini control by lua
 ===================================
 Control dfPlayer mini devices from nodemcu based devices using their serial communication protocol.
 dfPlayer mini is a low cost mp3 player whcih can be used in many appliactions. *More info about the hardware can be found on https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299 *
-
 The lack of standarized support on nodemcu was the motivation to create a simple file which send control commands to the device and can be re-used in any application.
 This code helps developers to integrate mp3 modules easily to their project easily.
 
-
-HHH Command structure
+Command structure
+===================================
 The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his result here https://forum.banggood.com/forum-topic-59997.html
 In the current lua solution we are working on a solution similar to Yerke's proposed, allowing the user/ developer to call the commands by using only the command and parameters (if required).
 This simplifies the development of devices and projects. Developer must add a **"dofile"** command to his code in order to send the requited commnd to the dfplayer.
@@ -16,27 +15,28 @@ A simple _play_ command can be executed like this: _**dofile("cc.lua").ply(0x0d)
 or a command which requires parammeters can be called like this: _**dofile("cc.lua").ply(0x0F,0x01,0x05)**_
 As you can see the only thing whic needs to be set is the hex commands in _.ply( )_.
 
-HHH How to use
+How to use
+===================================
 Upload the lua file (cc.lua) to your module and then from any part of your project you can call the command you like to use.
 
 **Examples are following**  
-Play command:		 				dofile("cc.lua").ply(0x0d)
-Pause command:			 			dofile("cc.lua").ply(0x0e)
-Play file 5 on folder 1:			dofile("cc.lua").ply(0x0F,0x01,0x05)
-Volume up: 							dofile("cc.lua").ply(0x04)
-Volume down: 						dofile("cc.lua").ply(0x05)
-Volume 20 (of 30 max): 				dofile("cc.lua").ply(0x06,0x00,0x14)
-Select equalizer preset(Rock):		dofile("cc.lua").ply(0x07,0x00,0x02)
-Play all repeat 					dofile("cc.lua").ply(0x11,0x00,0x01)
-Stop repeat player					dofile("cc.lua").ply(0x11,0x00,0x00)
+1. Play command:		 				dofile("cc.lua").ply(0x0d)
+2. Pause command:			 			dofile("cc.lua").ply(0x0e)
+3. Play file 5 on folder 1:			dofile("cc.lua").ply(0x0F,0x01,0x05)
+4. Volume up: 							dofile("cc.lua").ply(0x04)
+5. Volume down: 						dofile("cc.lua").ply(0x05)
+6. Volume 20 (of 30 max): 				dofile("cc.lua").ply(0x06,0x00,0x14)
+7. Select equalizer preset(Rock):		dofile("cc.lua").ply(0x07,0x00,0x02)
+8. Play all repeat 					dofile("cc.lua").ply(0x11,0x00,0x01)
+9. Stop repeat player					dofile("cc.lua").ply(0x11,0x00,0x00)
 
-HHH Commands supported
+Commands supported
+===================================
 The commands can be found on dfPlayer manual, although there are some points where the comamnd descritpion is not clear enough.
-
 *The following list is taken from Yerke's post on banggood forum. It contains only the a part of the commands supported if you want more info on this visit https://forum.banggood.com/forum-topic-59997.html*
 
-DF Player mini Commands without returned parameters (*=Confirmed command ?=Unknown, not clear or not validated)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DF Player mini Commands without returned parameters (*=Confirmed command ?=Unknown, not clear or not validated)
 CMD  CMD
 HEX  DEC Function Description                  Parameters(2 x 8 bit)
 ==== === =================================== = ======================================================================
