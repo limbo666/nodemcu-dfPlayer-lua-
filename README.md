@@ -8,11 +8,15 @@ This code helps developers to integrate mp3 modules easily to their project easi
 Command structure
 ===================================
 The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his result here https://forum.banggood.com/forum-topic-59997.html
+
 In the current lua solution we are working on a solution similar to Yerke's proposed, allowing the user/ developer to call the commands by using only the command and parameters (if required).
+
 This simplifies the development of devices and projects. Developer must add a **"dofile"** command to his code in order to send the requited commnd to the dfplayer.
 
 A simple _play_ command can be executed like this: _**dofile("cc.lua").ply(0x0d)**_ 
+
 or a command which requires parammeters can be called like this: _**dofile("cc.lua").ply(0x0F,0x01,0x05)**_
+
 As you can see the only thing whic needs to be set is the hex commands in _.ply( )_.
 
 How to use
@@ -24,7 +28,7 @@ Upload the lua file (cc.lua) to your module and then from any part of your proje
 2. **Pause command:**			 			_dofile("cc.lua").ply(0x0e)_
 3. **Play file 5 on folder 1:**			_dofile("cc.lua").ply(0x0F,0x01,0x05)_
 4. **Volume up:** 							_dofile("cc.lua").ply(0x04)_
-5.**Volume down:** 						_dofile("cc.lua").ply(0x05)_
+5. **Volume down:** 						_dofile("cc.lua").ply(0x05)_
 6. **Volume 20 (of 30 max):** 				_dofile("cc.lua").ply(0x06,0x00,0x14)_
 7. **Select equalizer preset(Rock):**		_dofile("cc.lua").ply(0x07,0x00,0x02)_
 8. **Play all repeat** 					_dofile("cc.lua").ply(0x11,0x00,0x01)_
