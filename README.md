@@ -5,6 +5,10 @@ dfPlayer mini is a low cost mp3 player whcih can be used in many appliactions. *
 The lack of standarized support on nodemcu was the motivation to create a simple file which send control commands to the device and can be re-used in any application.
 This code helps developers to integrate mp3 modules easily to their project easily.
 
+**Important notice: dfPlayer serial communication is set by default to 9600 baud. So nodemcu module (ESP, Wemos) should set its UART to 9600 as well**
+Running a UART setup command is essential step to communicate with dfPlayer _**uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1)**.
+UART setup can be called just once, for example in init.lua, but have in mind that this will swicth also the communication and programming speed. 
+
 Command structure
 ===================================
 The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his result here https://forum.banggood.com/forum-topic-59997.html

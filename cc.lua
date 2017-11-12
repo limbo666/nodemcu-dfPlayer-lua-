@@ -11,6 +11,10 @@
 -- Volume 20 (of 30 max): 		dofile("cc.lua").ply(0x06,0x00,0x14)
 -- Select equalizer preset(Rock):	dofile("cc.lua").ply(0x07,0x00,0x02)
 
+--Serial communication setup 
+uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1) -- You can move this line your project's init.lua file.
+--Please notice that the above line will switch the communication interface to 9600 baud. Re-connect your programmer using the set baud rate. 
+
 local PL
 do
 startb = 0x7e 	-- no change 
