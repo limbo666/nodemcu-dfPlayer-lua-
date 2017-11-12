@@ -20,15 +20,15 @@ How to use
 Upload the lua file (cc.lua) to your module and then from any part of your project you can call the command you like to use.
 
 **Examples are following**  
-1. Play command:		 				dofile("cc.lua").ply(0x0d)
-2. Pause command:			 			dofile("cc.lua").ply(0x0e)
-3. Play file 5 on folder 1:			dofile("cc.lua").ply(0x0F,0x01,0x05)
-4. Volume up: 							dofile("cc.lua").ply(0x04)
-5. Volume down: 						dofile("cc.lua").ply(0x05)
-6. Volume 20 (of 30 max): 				dofile("cc.lua").ply(0x06,0x00,0x14)
-7. Select equalizer preset(Rock):		dofile("cc.lua").ply(0x07,0x00,0x02)
-8. Play all repeat 					dofile("cc.lua").ply(0x11,0x00,0x01)
-9. Stop repeat player					dofile("cc.lua").ply(0x11,0x00,0x00)
+1. **Play command:**		 				_dofile("cc.lua").ply(0x0d)_
+2. **Pause command:**			 			_dofile("cc.lua").ply(0x0e)_
+3. **Play file 5 on folder 1:**			_dofile("cc.lua").ply(0x0F,0x01,0x05)_
+4. **Volume up:** 							_dofile("cc.lua").ply(0x04)_
+5.**Volume down:** 						_dofile("cc.lua").ply(0x05)_
+6. **Volume 20 (of 30 max):** 				_dofile("cc.lua").ply(0x06,0x00,0x14)_
+7. **Select equalizer preset(Rock):**		_dofile("cc.lua").ply(0x07,0x00,0x02)_
+8. **Play all repeat** 					_dofile("cc.lua").ply(0x11,0x00,0x01)_
+9. **Stop repeat player**					_dofile("cc.lua").ply(0x11,0x00,0x00)_
 
 Commands supported
 ===================================
