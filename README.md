@@ -9,6 +9,7 @@ This code helps developers to integrate mp3 modules easily to their project easi
 Running a UART setup command is essential step to communicate with dfPlayer _**uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1)**.
 UART setup can be called just once, for example in init.lua, but have in mind that this will swicth also the communication and programming speed. 
 
+
 Command structure
 ===================================
 The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his result here https://forum.banggood.com/forum-topic-59997.html
@@ -85,9 +86,9 @@ HEX  DEC Function Description                  Parameters(2 x 8 bit)
                                                Play mp3 file in folder named mp3 in your TF-card. File format exact
                                                4-digit number (0001~2999) e.g. 0235.mp3
 0x13  19 Unknown                             ? Unknown: Returns error code 0x07 
-												Correction: Place ADVERT folder in the root of sd card, and this code pause mp3... play advert, and then continue playing mp3 in the same position ... 
-												so if there is 3 sounds in advert folder: 0001.mp3, 0002.mp3 and 003.mp3, 
-												with 19 0 3... pause mp3 file... play advert and when finished continues playing mp3
+											Correction: Place ADVERT folder in the root of sd card, and this code pause mp3... play advert, and then continue playing mp3 in the same position ... 
+											so if there is 3 sounds in advert folder: 0001.mp3, 0002.mp3 and 003.mp3, 
+											with 19 0 3... pause mp3 file... play advert and when finished continues playing mp3
 0x14  20 Unknown                             ? Unknown: Returns error code 0x06
 0x15  21 Unknown                             ? Unknown: Returns no error code, but no function found                                              
 0x16  22 Stop                                * [DH]=X, [DL]=X, Stop playing current track
@@ -95,3 +96,10 @@ HEX  DEC Function Description                  Parameters(2 x 8 bit)
 0x18  24 Random play                         * [DH]=X, [DL]=X Random all tracks, always starts at track 1
 0x19  25 Single loop                         * [DH]=0, [DL]=0 Loops the track that is playing
 0x1A  26 Pause                               * [DH]=X, [DL]=(0x01:pause, 0x00:stop pause)
+
+
+
+Hardware connection example
+===================================
+A simpel connection diagram follows.
+![Connection example](https://github.com/limbo666/dfPlayer/blob/master/Images/Connection.png)
