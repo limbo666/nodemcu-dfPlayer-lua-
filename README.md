@@ -22,8 +22,8 @@ A simple _play_ command can be executed like this: _**dofile("cc.lua").ply(0x0d)
 or a command which requires parammeters can be called like this: _**dofile("cc.lua").ply(0x0F,0x01,0x05)**_
 
 As you can see the only thing whic needs to be set is the hex commands in _.ply( )_.
+![Command expand](https://github.com/limbo666/dfPlayer/blob/master/Images/Command.png)
 
-[logo]: https://github.com/limbo666/dfPlayer/blob/master/Images/Command.png
 
 How to use
 ===================================
