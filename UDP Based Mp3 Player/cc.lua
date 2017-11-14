@@ -13,7 +13,7 @@
 -- Play folder number 02:		dofile("cc.lua").ply(0x17,0x00,0x02)
 
 --Serial communication setup 
-uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1) -- You can move this line your project's init.lua file.
+--uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1) -- You can move this line your project's init.lua file.
 --Please notice that the above line will switch the communication interface to 9600 baud. Re-connect your programmer using the set baud rate. 
 
 local PL
