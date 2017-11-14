@@ -9,6 +9,10 @@ This code helps developers to integrate mp3 modules easily to their project easi
 Running a UART setup command is essential step to communicate with dfPlayer _**uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1)**.
 UART setup can be called just once, for example in init.lua, but have in mind that this will swicth also the communication and programming speed. 
 
+Hardware connection example
+===================================
+A simple connection diagram follows.
+![Connection example](https://github.com/limbo666/dfPlayer/blob/master/Images/Connection.png)
 
 Command structure
 ===================================
@@ -99,7 +103,4 @@ HEX  DEC Function Description                  Parameters(2 x 8 bit)
 
 
 
-Hardware connection example
-===================================
-A simpel connection diagram follows.
-![Connection example](https://github.com/limbo666/dfPlayer/blob/master/Images/Connection.png)
+
