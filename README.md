@@ -23,6 +23,8 @@ or a command which requires parammeters can be called like this: _**dofile("cc.l
 
 As you can see the only thing whic needs to be set is the hex commands in _.ply( )_.
 
+[logo]: https://github.com/limbo666/dfPlayer/blob/master/Images/Command.png
+
 How to use
 ===================================
 Upload the lua file (cc.lua) to your module and then from any part of your project you can call the command you like to use.
@@ -82,7 +84,10 @@ HEX  DEC Function Description                  Parameters(2 x 8 bit)
 0x12  18 Play mp3 file [NUM] in mp3 folder   * [DH]=highByte(NUM), [DL]=lowByte(NUM)
                                                Play mp3 file in folder named mp3 in your TF-card. File format exact
                                                4-digit number (0001~2999) e.g. 0235.mp3
-0x13  19 Unknown                             ? Unknown: Returns error code 0x07
+0x13  19 Unknown                             ? Unknown: Returns error code 0x07 
+												Correction: Place ADVERT folder in the root of sd card, and this code pause mp3... play advert, and then continue playing mp3 in the same position ... 
+												so if there is 3 sounds in advert folder: 0001.mp3, 0002.mp3 and 003.mp3, 
+												with 19 0 3... pause mp3 file... play advert and when finished continues playing mp3
 0x14  20 Unknown                             ? Unknown: Returns error code 0x06
 0x15  21 Unknown                             ? Unknown: Returns no error code, but no function found                                              
 0x16  22 Stop                                * [DH]=X, [DL]=X, Stop playing current track
