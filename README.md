@@ -49,9 +49,7 @@ Commands supported
 ===================================
 The commands can be found on dfPlayer manual, although there are some points where the command description is not clear enough or the commands are not giving results as described.
 
-*The following list is taken from Yerke's post on banggood forum. It contains only the a part of the commands without returned parameters. 
-
-If you want more info on this visit https://forum.banggood.com/forum-topic-59997.html*
+*The following list is taken from Yerke's post on banggood forum. It contains only the a part of the commands without returned parameters. If you want more info on this visit https://forum.banggood.com/forum-topic-59997.html*
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DF Player mini Commands without returned parameters (*=Confirmed command ?=Unknown, not clear or not validated)
