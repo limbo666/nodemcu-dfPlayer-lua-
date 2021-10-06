@@ -1,0 +1,395 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+var nDC={
+	C:{},
+	set:function(k,v){this.C[k]=v},
+	get:function(k){return this.C[k]!==void 0?this.C[k]:null},
+	os:function(){
+		var g=/(win|android|linux|nokia|ipad|iphone|ipod|mac|sunos|solaris)/.exec(navigator.platform.toLowerCase());
+		return g==null?"other":g[0]
+	},
+	browser:function(){
+		var g={name:"other",version:"0"},s=navigator.userAgent.toLowerCase();
+		browserRegExp={ie:/msie[ ]([\w.]+)/,firefox:/firefox[|\/]([\w.]+)/,chrome:/chrome[|\/]([\w.]+)/,safari:/version[|\/]([\w.]+)(\s\w.+)?\s?safari/,opera:/opera[|\/]([\w.]+)/};
+		for(var p in browserRegExp){var l=browserRegExp[p].exec(s);if(l){g.name=p;g.version=l[1]||"0";break}}
+		return g
+	},
+	config:function(){
+		var l={},g=window.navigator,p=window.screen;
+		l.D=p?p.width+"x"+p.height:"-";
+		l.language=(g&&(g.language||g.browserLanguage)||"-").toLowerCase();
+		l.characterSet=document.characterSet||document.charset||"-";
+		return l
+	},
+	source:function(){
+		var s=document.location.search,
+			r=document.referrer,
+			g=this.Vv("__bgvisit").length==0,
+			w="google:q,images.google:q,yandex:text,yahoo:p,yahoo:q,naver:query,bing:q,ask:q,daum:q,baidu:wd,baidu:word,haosou.com:q,so.com:q,360so.com:q,360sou.com:q,m.baidu:w,wap.soso:key,m.so:q,page.yicha:key,sz.roboo:q,i.easou:q,wap.sogou:keyword,soso:w,sogou:query,youdao:q,ucweb:keyword,ucweb:word,114so:kw,live:q,msn:q,aol:query,aol:q,eniro:search_word,pchome:q,lycos:query,netscape:query,cnn:query,about:terms,mamma:q,voila:rdata,virgilio:qs,alice:qs,najdi:q,seznam:q,search:q,wp:szukaj,onet:qt,szukacz:q,yam:k,kvasir:q,ozu:q,terra:query,rambler:query".split(","),
+			ua=this.parameter(s,"utm_source").toLowerCase(),
+			uf=this.parameter(s,"bid"),
+			ug=this.parameter(s,"admitad_uid"),
+			uh=this.parameter(s,"zf"),
+			ui=this.parameter(s,"p"),
+			ur=this.parameter(s,"ref"),
+			u=[];
+		if(uh||ui){
+			this.Wv('affiliate_code',uh||decodeURIComponent(decodeURIComponent(ui)),this.get(9),1296000000);
+		}
+		if(document.location.href.indexOf('?')>-1&&s==''){
+			s=document.location.href.split('?')[1];
+		}
+		this.set(18, uf||0);
+		if(r&&r.indexOf('forum.banggood.com')<0&&r.indexOf('blog.banggood.com')<0&&(r.split("/")[2].indexOf(this.get(9))>-1||r.split("/")[2].indexOf('www.paypal.com')>-1)){
+			var uj=this.parameter(s,"utmid");
+			this.set(28, uj||0);
+			this.set(25,0);
+			return false;
+		}
+		if(s.indexOf('www.banggood.com/fb.php')>0 || s.indexOf('www.banggood.com/twitter.php')>0){return false;}
+		if(ua){
+			var ub=this.parameter(s,"utm_medium").toLowerCase(),
+			uc=this.parameter(s,"utm_campaign").toLowerCase(),
+			ud=this.parameter(s,"utm_content").toLowerCase(),
+			ue=this.parameter(s,"utm_design");
+			if(ua=='google'){
+				ua=ub=='shopping'&&'googleshopping'||ub=='youtube'&&'youtube_cpc'||'adwords';
+			}else if(ua=='bing'&&/^(cpc|shopping|mail_christmas2013_cpc)$/.test(ub)){
+				ua='bing_cpc';
+			}else if(ua=='facebook'){
+				ua=ub=='cpc_fashion'&&'facebook_cpc_fashion'
+					||ub=='cpc_elc'&&'facebook_cpc_electro'
+					||ub=='cpc_other'&&'facebook_cpc_contras'
+					||ub=='fb_cpc'&&/^(lin|tone|justin|lincoln)$/.test(ud)&&'facebook_cpc_fashion'
+					||ub=='fb_cpc'&&/^(vivian|tracy|tanya|ruby)$/.test(ud)&&'facebook_cpc_electro'
+					||ub=='fb_cpc'&&/^(aldo|aaron)$/.test(ud)&&'facebook_cpc_electro'
+					||ub=='fb_cpc'&&'facebook_cpc'
+					||ua;
+			}else if(ua=='mopubi'){
+				ub='aff';
+				uc=this.parameter(s,'oid');
+				ud=this.parameter(s,'rqid');
+			}else if(ub=='cpc'){
+				ua+='_cpc';
+			}
+			u.push(ua);
+			u.push(ub||"-");
+			u.push(uc||"-");
+			u.push(ud||"-");
+			u.push(ue||0)
+		}else if(ur=='cityads'||ur=='cityads_br'){
+			u.push(ur);
+			u.push(this.parameter(s,"prx")||"-");
+			u.push(this.parameter(s,"aip")||"-");
+			u.push(this.parameter(s,"click_id")||"-");
+			u.push(0)
+		}else if(ug){
+			u.push('admitad');
+			u.push("aff");
+			u.push("-");
+			u.push(ug||"-");
+			u.push(0)
+		}else if(uh){
+			u.push('bg_affiliate');
+			u.push("aff");
+			u.push("zf");
+			u.push(uh);
+			u.push(0);
+		}else if(ui){
+			var uc=this.parameter(s,"utm_campaign").toLowerCase(),
+				ud=this.parameter(s,"utm_content").toLowerCase(),
+				code=/.{6}(.*)20(\d{4})(.{1,2})$/.exec(decodeURIComponent(decodeURIComponent(ui)));
+			u.push('bg_affiliate');
+			u.push("aff");
+			u.push(uc||'p');
+			u.push(ud||code[1]);
+			u.push(0);
+		}else{
+			var p=r&&r.split("/")[2],aX=false;
+			if(p){
+				for(var ak=0;ak<w.length;ak++){
+					var aV=w[ak].split(":");
+					if(p.indexOf(aV[0].toLowerCase())>-1&&r.indexOf((aV[1]+"=").toLowerCase())>-1){
+						var D=this.parameter(r,aV[1]);
+						u.push(aV[0]);
+						u.push("organic");
+						u.push("-");
+						u.push(D||"-");
+						u.push(0);
+						aX=true;
+						break
+					}
+				}
+				if(!aX){
+					if(p.indexOf("shareasale.com")>-1){
+						var D=this.parameter(r,'u');
+						u.push("shareasale");
+						u.push("aff");
+						u.push("-");
+						u.push(D||'-');
+						u.push(0)
+					}else if(p.indexOf('forum.banggood.com')>-1){
+						u.push('bbs');
+						u.push("sns");
+						u.push("-");
+						u.push('-');
+						u.push(0)
+					}else if(p.indexOf('blog.banggood.com')>-1){
+						u.push('blog.banggood.com');
+						u.push("blog");
+						u.push("-");
+						u.push('-');
+						u.push(0)
+					}else{
+						u.push(p);
+						u.push("refer");
+						u.push("-");
+						u.push("-");
+						u.push(0)
+					}
+				}
+			}
+		}
+		if(g||(!g&&u.length>0&&(u[0]!==this.get(19)||u[1]!==this.get(20)||u[2]!==this.get(21)||u[3]!==this.get(22)))){
+			this.set(19,u[0]||'direct');
+			this.set(20,u[1]||'none');
+			this.set(21,u[2]||'-');
+			this.set(22,u[3]||'-');
+			this.set(23,u[4]||0);
+			this.set(25,1);
+			if(this.cancover()){
+				this.Wv('__bgqueue',this.get(14)+'|'+this.get(19)+'|'+this.get(20)+'|'+this.get(21)+'|'+this.get(22)+'|'+this.get(23)+'|'+this.get(24),this.get(9),this.get(12));
+				this.set(25,2)
+			}
+		}
+	},
+	cancover:function(){
+		this.level();
+		if(this.Vv("__bgqueue").length===0){return true;}
+		var q=this.Vv('__bgqueue')[0].split('|');
+		if(q[6]==3){if(this.get(14)-q[0]<1296000000)return false;}
+		if(this.get(24)>=2||this.get(24)>=q[6]){
+			return true;
+		}
+		else if(this.get(24)==1){
+			if(q[1]=='googleshopping'){return true}else if(q[1]=='adwords'&&q[3].substr(0,1)=='s'){return true}
+		}
+		else if(this.get(24)==q[6]&&this.get(20)!='none'){return true}
+		return false;
+	},
+	level:function(){
+		var l=0,f=0,m=this.get(20);
+		if(m=='none'){
+			this.set(24,l);return;
+		}
+		if(/^(cpc|edm|aff|blog|redid|cussku|redsku)$/.test(m)){l=2;}
+		else if(m=='organic'||m=='cservice'){l=1;}
+		else if(m=='refer'){
+			var s="facebook,reddit,youtube,instagram,pinterest,rcgroups,fok.nl".split(",");
+			for(var ak=0;ak<s.length;ak++){
+				if(this.get(19).indexOf(s[ak])>-1){
+					l=2;break;
+				}
+			}
+			if(l<2){
+				var b="article,appleaccessoriesreview,mobliephonefansclub,topmobliephonereview,mobliephonereview,electronicshubs,autoandmotorfun,tabletpctidings,sportsoutdoorhub,flashlightslighting,ledlightinglights,toptoyspace,pcfansworld,firsttoyreviews,skateonroad,menfashionhub,womendresslos,slimfit-clothing,jewelrygossips,iwatchau,minibeautylife,mfirsthome,wishforpets,cutebabyz,femalecharming,ilooklingerie,weddingideabox,insanejournal,pressbox.co.uk,prlog,1888pressrelease,24-7pressrelease,addpr,clickpress,mwire,exactrelease,free-press-release,freepressindex,free-press-release-center.info,i-newswire,pressabout,pressexposure,pressmethod,freepressreleases.co.uk,prurgent,publicrelations.uk,usprwire,pressbox,ukprwire,ezinepoint,apsense,hiverse,altervista,plasticsurgeonjournal,katrol,gayaryweb,enrollproduct,e-mediatecs,broowaha,onlng,artipot,indiagrid,briefingwire,freeprnow".split(",");
+				for(var ak=0;ak<b.length;ak++){
+					if(this.get(19).indexOf(b[ak])>-1){
+						l=2;f=1;break;
+					}
+				}
+			}
+		}
+		else if(!isNaN(m)&&/^(blog|youtube|pintrest|forum|polyvore|tumblr)$/.test(this.get(19))){
+			l=2;
+		}
+		else{
+			var f="adwords,facebook_cpc_fashion,facebook_cpc_electro,facebook_cpc_contras,youtube_cpc,googleshopping,facebookadsgoogleadwords_int,googleadwords_pur,sharesale,bg_affiliate,tradetracker,cityads,admitad,cj,banggood_cj,tradedoubler,mopubi,emarsys,emailvision,yandex-cpc,facebook,bbs,facebook_bgfashion,facebook_br,reddit,youtube,instagram,pinterest,webgains,rcgroups,cityads_br".split(",");
+			for(var ak=0;ak<f.length;ak++){
+				if(this.get(19)==f[ak]){
+					l=2;break;
+				}
+			}
+		}
+		if(l==2){
+			if(this.get(19)=='adwords'&&(m=='cpc'||m=='gsp'||m=='reddit')){
+				f=1;
+			}
+			else{
+				var t="youtube_cpc,facebook_cpc_fashion,facebook_cpc_electro,facebook_cpc_contras,facebook_cpc,gsp_cpc,criteo_cpc".split(",");
+				for(var aj=0;aj<t.length;aj++){
+					if(this.get(19)==f[aj]){
+						f=1;break;
+					}
+				}
+			}
+			if(f==1&&this.get(16)==0){
+				l=3;
+			}
+		}
+		this.set(24,l);
+	},
+	domain:function(){
+		var d='banggood.com,yoins.com,buyalleasy.com,newchic.com'.split(',');
+		for(var i=0;i<d.length;i++){
+			if(window.document.domain.indexOf(d[i])>=0)return d[i];
+		}
+		return null;
+	},
+	site:function(){
+		var w=this.get(10),
+			s='www.banggood.com:banggood_SID,m.banggood.com:webApp_SID,www.yoins.com:yoins_SID'.split(',');
+		for(var ai=0;ai<s.length;ai++){
+			var aw=s[ai].split(':');
+			if(aw[0]==w){this.set(26,this.Vv(aw[1])[0]||'');break;}
+		}
+	},
+	init:function(){
+		this.set(0,document.location.href);
+		this.set(1,document.referrer.replace(/\$/g,""));
+		this.set(2,this.os());
+		var g=this.browser();
+		this.set(3,g.name);
+		this.set(4,g.version);
+		var t=this.config();
+		this.set(5,t.characterSet);
+		this.set(6,t.D);
+		this.set(7,t.language);
+		this.set(8,this.Vv("_bgLang")[0]||'-');
+		this.set(9,this.domain());
+		this.set(10,document.location.hostname);
+		this.set(11,31104000000);
+		this.set(12,2592000000);
+		this.set(13,1440000);
+		var nt=(new Date).getTime();
+		this.set(14,nt);
+		var u=this.Vv('__bguser'),
+			_1=u.length>0?u[0].split('|'):[],
+			v=this.Vv('__bgvisit'),
+			_2=v.length>0?v[0].split('|'):[];
+		if(_2.length>0&&nt-_2[0]>1440000){_2=[]}
+		this.set(15,_2.length>0?_1[1]:0);
+		this.set(16,_1[2]||0);
+		this.set(17,_1[3]||this.get(14));
+		this.set(18,0);
+		this.set(19,_2[1]||"direct");
+		this.set(20,_2[2]||"none");
+		this.set(21,_2[3]||'-');
+		this.set(22,_2[4]||'-');
+		this.set(23,_2[5]||0);
+		this.set(24,_2[6]||0);
+		this.set(25,0);
+		this.set(26,'');
+		this.set(27,this.Vv('COOKIE_ID')[0]||0);
+		this.set(28,0);
+		this.set(29,this.Vv('dc_cid')[0]||0);
+		this.site();
+		this.source()
+	},
+	Wv:function(s,g,p,l){
+		s=s+"="+g+"; path=/; ";
+		l&&(s+="expires="+(new Date(new Date().getTime()+l)).toGMTString()+"; ");
+		p&&(s+="domain="+p+";");
+		document.cookie=s
+	},
+	Vv:function(y){
+		for(var g=[],t=document.cookie.split(";"),l=RegExp("^\\s*"+y+"=\\s*(.*?)\\s*$"),s=0;s<t.length;s++){
+			var p=t[s]["match"](l);p&&g.push(p[1])
+		}
+		return g
+	},
+	sendSess:function(){
+		var s=this.get(2)+'|'+this.get(3)+'|'+this.get(4)+'|'+this.get(5)+'|'+this.get(6)+'|'+this.get(7)+'|'+this.get(8)+'|'+this.get(9)+'|'+this.get(16)+'|'+this.get(17)+'|'+this.get(14)+'|'+this.get(10)+'|'+this.get(26)+'|'+this.get(27);
+		var g=("https:"==document.location.protocol?"https://web.archive.org/web/20160528151706/https://dc":"https://web.archive.org/web/20160528151706/http://dc")+".banggood.com/index.php?com=sess&t=session&visit="+encodeURIComponent(this.get(0))+"&refer="+encodeURIComponent(this.get(1))+"&info="+s+"&dq="+encodeURIComponent(this.Vv('__bgqueue')[0])+"&callback=?";
+		$.getJSON(g,function(){})
+	},
+	sendVisit:function(s){
+		if(isNaN(s)||s<1){return}
+		var y="&visit="+encodeURIComponent(this.get(0))+"&refer="+encodeURIComponent(this.get(1))+"&info="+this.Vv('__bguser')[0]+"&bid="+this.get(18)+"&site="+this.get(10)+"&domain="+this.get(9)+"&bglang="+this.get(8)+"&utmid="+this.get(28)+"&customers_id="+this.get(29);
+		if(this.get(25))y+='&dv='+encodeURIComponent(this.Vv('__bgvisit')[0])+'&dq='+encodeURIComponent(this.Vv('__bgqueue')[0]);
+		var g=("https:"==document.location.protocol?"https://web.archive.org/web/20160528151706/https://dc":"https://web.archive.org/web/20160528151706/http://dc")+".banggood.com/index.php?com=sess&t=visit"+y+"&callback=?";
+		$.getJSON(g,function(){})
+	},
+	sendShow:function(){
+		var s=nDC.product();
+		var y=s[0].join(',');
+		var g=("https:"==document.location.protocol?"https://web.archive.org/web/20160528151706/https://dc":"https://web.archive.org/web/20160528151706/http://dc")+".banggood.com/index.php?com=record&t=aysnCollect"+"&site="+this.get(10)+"&domain="+this.get(9)+"&dcData="+y+"&callback=?";
+		$.getJSON(g,function(){})
+	},
+	oSession:function(ret){
+		this.set(15,ret);
+		this.get(16)||this.set(16,ret);
+		this.Wv('__bguser',this.get(14)+'|'+this.get(15)+'|'+this.get(16)+'|'+this.get(17),this.get(9),this.get(11));
+		this.sendVisit(ret);
+	},
+	oVisit:function(ret){
+		
+	},
+	parameter:function(p,l){
+		var s=new RegExp(".*(?:^|&|[?]|[/])"+l+"=([^&]*).*$");var g=s.exec(p);return g?encodeURIComponent(g[1]):""
+	},
+	product:function(){
+		var ta=document.getElementsByTagName('a'),tg=[],th=[],ts=new RegExp(".*-p-(\\d+)\\.html");
+		for(var ti=0;ti<ta.length;ti++){
+			var tp=ta[ti].getAttribute('href');
+			if(ti>1&&tp==ta[ti-1].getAttribute('href'))continue;
+			if(tp&&tp.indexOf(this.get(9))>-1){
+				if(ts.test(tp)){
+					var tm=ts.exec(tp);th.push(tm[1])
+				}
+//				,tb=new RegExp(".*\\.html\\?.*bid=(\\d+).*$")
+//				if(tb.test(tp)){
+//					var tn=tb.exec(tp);tg.push(tn[1]);
+//				}
+			}
+		}
+		return [th,tg];
+	}
+};
+(function(){
+	nDC.init();
+	if(nDC.get(9)===null)return;
+	var v=nDC.get(14)+'|'+nDC.get(19)+'|'+nDC.get(20)+'|'+nDC.get(21)+'|'+nDC.get(22)+'|'+nDC.get(23)+'|'+nDC.get(24);
+	nDC.Wv('__bgvisit',v,nDC.get(9),nDC.get(13));
+	if(nDC.get(15)==0){
+		nDC.sendSess();
+	}else{
+		nDC.sendVisit(nDC.get(15));
+	}
+})();
+$(function(){
+	nDC.sendShow();
+});
+
+}
+/*
+     FILE ARCHIVED ON 15:17:06 May 28, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:40:51 Oct 06, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 719.737
+  exclusion.robots: 0.103
+  exclusion.robots.policy: 0.096
+  RedisCDXSource: 71.609
+  esindex: 0.017
+  LoadShardBlock: 600.367 (3)
+  PetaboxLoader3.datanode: 225.881 (4)
+  CDXLines.iter: 37.597 (3)
+  PetaboxLoader3.resolve: 226.013 (2)
+  load_resource: 79.193
+*/

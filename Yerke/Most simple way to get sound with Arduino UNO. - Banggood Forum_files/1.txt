@@ -1,0 +1,36 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+_ate.track.config_resp({"pc":"shin","tool-config":{"_default":{"widgets":{"v24y":{"widgetId":"v24y","shareCountThreshold":0,"services":"facebook,twitter,reddit","size":"20px","borderRadius":"0%","thirdPartyButtons":false,"elements":".addthis_sharing_toolbox","responsive":"0px","style":"fixed","id":"shin","hideLabel":true,"toolName":"banggood forum"},"sq2l":{"countsFontSize":"60px","hideEmailSharingConfirmation":false,"counts":"each","widgetId":"sq2l","shareCountThreshold":10,"originalServices":"facebook_like,tweet,pinterest_pinit,google_plusone,counter","services":"facebook,messenger,pinterest_share,twitter,tumblr,vk","label":"SHARES","__hideOnHomepage":false,"numPreferredServices":8,"borderRadius":"4px","size":"20px","titleFontSize":"18px","elements":".addthis_inline_share_toolbox_sq2l","responsive":"979px","creationTimestamp":1477359940646,"iconColor":"#FFFFFF","counterColor":"#666666","hideDevice":"none","style":"responsive","id":"shin","hideLabel":false,"toolName":"Morimiss"}}}},"subscription":{"active":true,"edition":"BASIC","tier":"basic","reducedBranding":false,"insightsEnabled":false},"customMessageTemplates":[],"pro-config":{"_default":{"widgets":{"shin":{"countsFontSize":"60px","hideEmailSharingConfirmation":false,"counts":"each","widgetId":"sq2l","shareCountThreshold":10,"originalServices":"facebook_like,tweet,pinterest_pinit,google_plusone,counter","services":"facebook,messenger,pinterest_share,twitter,tumblr,vk","label":"SHARES","__hideOnHomepage":false,"numPreferredServices":8,"borderRadius":"4px","size":"20px","titleFontSize":"18px","elements":".addthis_inline_share_toolbox_sq2l","responsive":"979px","creationTimestamp":1477359940646,"iconColor":"#FFFFFF","counterColor":"#666666","hideDevice":"none","style":"responsive","id":"shin","hideLabel":false,"toolName":"Morimiss"}}}}});
+
+}
+/*
+     FILE ARCHIVED ON 19:26:54 Jul 08, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:41:04 Oct 06, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 167.831
+  exclusion.robots: 0.096
+  exclusion.robots.policy: 0.089
+  RedisCDXSource: 3.614
+  esindex: 0.007
+  LoadShardBlock: 138.444 (3)
+  PetaboxLoader3.datanode: 172.577 (4)
+  CDXLines.iter: 23.307 (3)
+  load_resource: 181.969
+  PetaboxLoader3.resolve: 85.175
+*/
