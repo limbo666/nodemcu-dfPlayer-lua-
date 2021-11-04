@@ -7,7 +7,7 @@ This code helps developers to integrate mp3 modules easily to their project easi
 
 **Important notice: dfPlayer serial communication is set by default to 9600 baud. So nodemcu module (ESP, Wemos) should set its UART to 9600 as well**
 Running a UART setup command is essential step to communicate with dfPlayer _**uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1)**.
-UART setup can be called just once, for example in init.lua, but have in mind that this will swicth also the communication and programming speed. 
+UART setup can be called just once, for example in init.lua, but have in mind that this will switch also the communication and programming speed. 
 
 Hardware connection example
 ===================================
@@ -16,9 +16,9 @@ A simple connection diagram follows.
 
 Command structure
 ===================================
-The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his result here https://forum.banggood.com/forum-topic-59997.html
+The complete serial command structure is described in the device manual (http://www.picaxe.com/docs/spe033.pdf). User Yerke was a guy who took this info a bit further by testing most of these commnads under arduino environment and posted his results here ~~ https://forum.banggood.com/forum-topic-59997.html ~~ https://web.archive.org/web/20160510212536/http://forum.banggood.com:80/forum-topic-59997.html (the original post removed from their forums)
 
-In the current lua solution we are working on a solution similar to Yerke's proposed, allowing the user/ developer to call the commands by using only the command and parameters (if required).
+In the current lua solution we are working is similar way with Yerke, allowing the user/developer to call the commands by using only the command and parameters (if required).
 
 This simplifies the development of devices and projects. Developer must add a **"dofile"** command to his code in order to send the requited commnd to the dfplayer.
 
