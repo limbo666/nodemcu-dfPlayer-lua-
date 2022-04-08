@@ -50,7 +50,7 @@ Commands supported
 The commands can be found on dfPlayer manual, although there are some points where the command description is not clear enough or the commands are not giving results as described.
 
 *The following list is taken from Yerke's post on banggood forums. It contains only the a part of the commands without returned parameters. If you want more info on this visit https://forum.banggood.com/forum-topic-59997.html*
-Update: The post is removed from banggood forums for an unknown reason. 
+Update: The post is removed from banggood forums for an unknown reason. Please use web archive https://web.archive.org/web/20160510212536/http://forum.banggood.com:80/forum-topic-59997.html (the original post removed from their forums) 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DF Player mini Commands without returned parameters (*=Confirmed command ?=Unknown, not clear or not validated)
