@@ -1,11 +1,11 @@
 dfPlayer mini control by lua 
 ===================================
-Control dfPlayer mini devices from nodemcu based devices using their serial communication protocol.
-dfPlayer mini is a low cost mp3 player whcih can be used in many appliactions. *More info about the hardware can be found on https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299 *
+Control dfPlayer mini devices from nodemcu (firmware) based devices using their serial communication protocol.
+dfPlayer mini is a low cost mp3 player which can be used in many appliactions. *Secifications about the hardware can be found on https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299 *
 The lack of standarized support on nodemcu was the motivation to create a simple file which send control commands to the device and can be re-used in any application.
-This code helps developers to integrate mp3 modules easily to their project easily.
+This code helps developers to integrate mp3 modules easily to any project is needed.
 
-**Important notice: dfPlayer serial communication is set by default to 9600 baud. So nodemcu module (ESP, Wemos) should set its UART to 9600 as well**
+**Important notice: dfPlayer serial communication is set by default to 9600 baud and according to DF player there is no commnds to allow change the communication speed. So nodemcu module (ESP, Wemos) should set its UART to 9600 as well**
 Running a UART setup command is essential step to communicate with dfPlayer _**uart.setup(0, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, 1)**.
 UART setup can be called just once, for example in init.lua, but have in mind that this will switch also the communication and programming speed. 
 
